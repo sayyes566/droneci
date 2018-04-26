@@ -1,5 +1,6 @@
 # droneci
-## drone ci with GitLab
+
+### drone ci with GitLab
 
 #### registry oauth to allow Drone login to gitlab :
 ```
