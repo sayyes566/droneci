@@ -12,7 +12,7 @@ services:
     restart: always
     environment:
       - DRONE_OPEN=true
-      - DRONE_HOST=http://140.96.29.227:8083
+      - DRONE_HOST=http://140.96.29.12:8083
       #- DRONE_GITHUB=true
       #- DRONE_GITHUB_CLIENT=${DRONE_GITHUB_CLIENT}
       #- DRONE_GITHUB_SECRET=${DRONE_GITHUB_SECRET}
