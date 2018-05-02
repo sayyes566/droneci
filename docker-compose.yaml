@@ -12,15 +12,15 @@ services:
     restart: always
     environment:
       - DRONE_OPEN=true
-      - DRONE_HOST=http://140.96.29.12:8083
+      - DRONE_HOST=http://${DRONE_HOST}:8083
       #- DRONE_GITHUB=true
       #- DRONE_GITHUB_CLIENT=${DRONE_GITHUB_CLIENT}
       #- DRONE_GITHUB_SECRET=${DRONE_GITHUB_SECRET}
       - DRONE_GITLAB=true
-      - DRONE_GITLAB_CLIENT=682c063ee4066864ec69c15f0b93cf0c3e329165e0628cbf04de8fe8e79a2f6f
-      - DRONE_GITLAB_SECRET=e08bae6420d4e9fc52e969923cc718e33726e1de2f8745a877d253274ddfb643
-      - DRONE_GITLAB_URL=http://10.206.19.5:10080
-      - DRONE_SECRET=abcde
+      - DRONE_GITLAB_CLIENT=${DRONE_GITLAB_CLIENT}
+      - DRONE_GITLAB_SECRET=${DRONE_GITLAB_SECRET}
+      - DRONE_GITLAB_URL=http://${GITLAB_URL}
+      - DRONE_SECRET=${DRONE_SECRET}
 
   drone-agent:
     image: drone/agent:0.8
@@ -33,4 +33,4 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - DRONE_SERVER=drone-server:9000
-      - DRONE_SECRET=abcde
+      - DRONE_SECRET=${DRONE_SECRET}
